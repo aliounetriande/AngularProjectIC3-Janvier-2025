@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title{
+        margin-bottom: 64px;
+    }
+
+    .card{
+        border: 1px solid #777;
+        border-radius: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 24px;
+        width: fit-content;
+
+        &__image{
+            width: 128px;
+            object-fit: cover;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+
+        &__title{
+            display: block;
+            margin-top: 16px;
+            font-weight: bold;
+            font-style: 24px;
+        }
+
+        &__links{
+            margin-top: 32px;
+            width: 100%;
+
+            &__item{
+                background-color: #dbcec3;
+                text-align: center;
+                padding: 8px;
+                border-radius: 6px;
+                margin-top: 10px;
+                font-weight: bold;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
