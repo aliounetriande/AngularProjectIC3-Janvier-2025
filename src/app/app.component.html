@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 class="title">User Profile</h1>
+  <h1 class="title">{{title}}</h1>
 
   <div class="card">
 
@@ -8,9 +8,15 @@
     <app-profile-description></app-profile-description>
     
     <div class="card_links">
-      <app-social-link></app-social-link>
+      <app-social-link (selectLink)="displayLink($event)" [name]="'Github'"></app-social-link>
+      <app-social-link (selectLink)="displayLink($event)" [name]="'Linkedin'"></app-social-link>
+      <app-social-link (selectLink)="displayLink($event)" [name]="'Twitter'"></app-social-link>
     </div>
 
   </div>
-  
+
+  <div class="screen">
+    {{selectedLink}}
+  </div>
+
 </div>
