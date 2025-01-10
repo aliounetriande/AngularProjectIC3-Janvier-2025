@@ -8,15 +8,27 @@
     <app-profile-description></app-profile-description>
     
     <div class="card_links">
-      <app-social-link (selectLink)="displayLink($event)" [name]="'Github'"></app-social-link>
-      <app-social-link (selectLink)="displayLink($event)" [name]="'Linkedin'"></app-social-link>
-      <app-social-link (selectLink)="displayLink($event)" [name]="'Twitter'"></app-social-link>
+      
+      @for (link of linkTab; track $index) {
+        <app-social-link (selectLink)="displayLink($event)" [socialLink] = "link"></app-social-link>
+      } @empty {
+        Links Unavailable
+      }
     </div>
 
   </div>
 
-  <div class="screen">
-    {{selectedLink}}
-  </div>
+  @if (selectedLink!='Empty selection') {
 
+    <p class="screen">
+      @if (selectedLink){
+        {{selectedLink}}
+      } @else {
+        {{'Empty selection'}}
+      }
+      
+    </p>
+  
+  }
+  
 </div>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
+import { SocialLink } from '../../models/social-link';
 
 @Component({
   selector: 'app-social-link',
@@ -9,14 +10,20 @@ import { Input } from '@angular/core';
 })
 export class SocialLinkComponent {
   @Input()
-  name = 'Empty';
+  socialLink: SocialLink | undefined;
+  
+
+
+  
 
   @Output()
-  selectLink = new EventEmitter <string>();
+  selectLink = new EventEmitter <SocialLink>();
+
+  value = "selected link: ";
 
   getLink(): void {
-    console.log(this.name);
-    const value = 'Selected link: ' + this.name;
-    this.selectLink.emit(value)
+    console.log(this.socialLink);
+   
+    this.selectLink.emit(this.socialLink)
   }
 }
